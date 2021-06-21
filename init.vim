@@ -1,18 +1,22 @@
 call plug#begin(stdpath('data')) 
 
 Plug 'scrooloose/nerdtree'
+Plug 'vimsence/vimsence'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'vimsence/vimsence'
 Plug 'alvan/vim-closetag'
 
 call plug#end()
 
 let mapleader = " "
+
+" NERDCOMMENTER SETTINGS
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
 
 " NERDTREE SETTINGS
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -182,6 +186,8 @@ filetype plugin on
 
 inoremap jj <Esc>
 noremap <C-s> :w<Enter>
+nmap <C-z> <Nop>
+vmap <C-c> "*y<Enter>
 
 map <Esc> :noh<CR>
 map <leader>h <C-w>h
